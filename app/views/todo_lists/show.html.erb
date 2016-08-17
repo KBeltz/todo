@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>[title:</strong>
+  <strong>title:</strong>
   <%= @todo_list.title %>
 </p>
 
@@ -9,6 +9,13 @@
   <strong>Description:</strong>
   <%= @todo_list.description %>
 </p>
+
+<div id="todo_items_wrapper">
+  <%= render @todo_list.todo_items %>
+  <div id="form">
+    <%= render 'todo_items/form' %>
+  </div>
+</div>
 
 <%= link_to 'Edit', edit_todo_list_path(@todo_list) %> |
 <%= link_to 'Back', todo_lists_path %>
